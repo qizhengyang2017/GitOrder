@@ -3,6 +3,20 @@ git 命令的收集以及总结
 
 ## git操作指令
 
+
+### 远程同步
+会先拉取远程最新的提交，然后把你本地的提交“接”在它后面（不产生多余 merge）。
+git pull --rebase origin main
+git push origin main
+
+查看文件/目录的提交历史
+git log -- wang_RNA-seq_lsf/
+git log -- wang_RNA-seq_lsf/12DPA_ID1.lsf
+
+old作为第一个参数，new的作为第二个参数。这样：+开头的行表示新增，-开头的行表示删除
+git diff c92b73 bed99d -- wang_RNA-seq_lsf/12DPA_ID1.lsf
+
+
 ### 版本回退
  1. git reflog   ——记录你的每一次命令
  2. git reset --hard HEAD^    ——回退到上一个版本
@@ -24,11 +38,6 @@ HEAD指向的版本就是当前版本，因此，Git允许我们在版本的历�
  3. 版本库里存了很多东西，其中最重要的就是称为stage（或者叫index）的暂存区，还有Git为我们自动创建的第一个分支master，以及指向master的一个指针叫HEAD。
  ![image](https://github.com/fayou147/GitOrder/blob/master/image/0.jpg)
 
- 总结一下：
-
- git add把文件添加进去，实际上就是把文件修改添加到暂存区
-
- git commit提交更改，实际上就是把暂存区的所有内容提交到当前分支（默认就是Git为我们自动创建的第一个分支master）
 
 ### 撤销修改
 
