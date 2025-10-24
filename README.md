@@ -8,7 +8,11 @@ https://education.github.com/git-cheat-sheet-education.pdf
 
 ### 远程同步
 
-我在github网页上有修改文件。如何同步到本地？本地也有修改的文件
+我在github网页上有修改文件。如何同步到本地？本地也有修改的文件。可以先使用
+```shell
+git pull origin master
+```
+如果本地有新的提交，可以使用`--rebase`
 会先拉取远程最新的提交，然后把你本地的提交“接”在它后面（不产生多余 merge）。
 ```shell
 git pull --rebase origin main
